@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Home page</h1>
+
+    <% if (model.message) { %>
+        <h3><%= model.message %></h3>
+    <% } %>
+
+    <% model.todos.forEach(todo => { %>
+        <div style="border: 1px solid grey">
+            <p><%= todo.text %></p>
+            <span>Due date: <%= todo.dueDate.getFullYear() + ":" + todo.dueDate.getMonth() + ":" + todo.dueDate.getDate()%> </span>
+            <span>Is completed: <%= todo.isCompleted %> </span>
+        </div>
+    <% }) %>
+</body>
+</html>
